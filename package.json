@@ -1,0 +1,23 @@
+{
+  "name": "mockup",
+  "version": "1.0.0",
+  "description": "designed to learn and showcase my efforts in learning DB management and it pertains to forage pdx",
+  "main": "index.js",
+  "dependencies": {
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AustenHsiao/MockForageDB.git"
+  },
+  "author": "Austen Hsiao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AustenHsiao/MockForageDB/issues"
+  },
+  "homepage": "https://github.com/AustenHsiao/MockForageDB#readme"
+}
