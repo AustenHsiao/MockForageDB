@@ -1,0 +1,44 @@
+doctype html
+html(lang='en')
+    head
+        title Forage App (Mock)
+        style 
+            include ../css/forage.css
+    body
+        nav.container.navBar
+            h3 Forage App
+            a#nav1(
+                href='/'
+                name='nav1'
+            ) Main
+            a#nav2(
+                href='/'
+                name='nav2'
+            ) Add Spot
+            a#nav3(
+                href='/'
+                name='nav3'
+            ) About
+        
+        div.welcome#welcomeOverlay
+            div.container.welcome-text
+                h3#desc-title Welcome to Forage App 
+                p#desc Forage app allows users to easily set and store foraging locations. Start by clicking on the 'Add Spot' tab, then filling in the details on the corresponding page. Your information will be displayed on the main page. Use real-time weather data to plan your foraging trip
+                button#escape(
+                    onclick='clearOverlay()'
+                ) Continue
+        
+        div.container.whole
+            div.container.coord
+                h3#coordTitle Foraging Locations 
+                div#coordinatesBox= locations
+            
+            div.container.map
+                div#mapBox(
+                    crossorigin='anonymous'
+                )
+                    img(
+                        src='psu.png'
+                        alt='Google maps mock image'
+                    )
+        div.container.weather#weatherBox
