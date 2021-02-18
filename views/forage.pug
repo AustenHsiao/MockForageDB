@@ -29,11 +29,12 @@ html(lang='en')
                 ) Continue
         
         div.container.whole
-            h3#coordTitle.searchBar Search by User Name 
-            input#userNameInput
             div.container.coord
-                h3#coordTitle Foraging Locations 
-                div.searchResult= locations
+                h3#coordTitle.searchBar Search by User Name 
+                input#userNameInput
+                div.searchSplit
+                    h3#coordTitle Foraging Locations 
+                    div.searchResult= locations
             
             div.container.map
                 div#mapBox(
