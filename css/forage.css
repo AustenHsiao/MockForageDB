@@ -133,4 +133,5 @@ img{
 
 .searchSplit{
   overflow-y: scroll;
+  min-height: 100%;
 }
