@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
         location_results = [];
 
         (result.rows).forEach(element => {
-          location_results.push([element.lat, element.lng, element.spotname, element.spotcomment]);
+          location_results.push([`Latitude: ${element.lat}`, `Longitude: ${element.lng}`, `Name: ${element.spotname}`, `Comment: ${element.spotcomment}`]);
         })
       }).catch((e) => {
         console.log(e);
