@@ -25,13 +25,15 @@ app.get("/", (req, res) => {
         //console.log(result.rows.values());
 
         //let location_array = result.rows.values();
-        (result.rows.values()).forEach(element => {
+        (result.rows).forEach(element => {
+          console.log(element);
+          /*
           let loc = JSON.parse(element);
           location_results += loc["lat"];
           location_results += "\n" + loc["lng"];
           location_results += "\n" + loc["id"];
           location_results += "\n" + loc["spotname"];
-          location_results += "\n" + loc["spotcomment"] + "\n\n";
+          location_results += "\n" + loc["spotcomment"] + "\n\n";*/
         })
       }).catch((e) => {
         console.log(e);
