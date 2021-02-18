@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
     client.query("SELECT * FROM location")
       .then((result) => {
         location_results = "";
-        console.log(typeof location_results.values());
+        console.log(result.rows.values());
 
         let location_array = result.rows.values();
         location_array.foreach(element => {
