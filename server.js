@@ -25,7 +25,7 @@ app.get("/", (req, res) => {
         //console.log(result.rows.values());
 
         //let location_array = result.rows.values();
-        (result.rows).forEach(element => {
+        (result.rows.values()).forEach(element => {
           let loc = JSON.parse(element);
           location_results += loc["lat"];
           location_results += "\n" + loc["lng"];
