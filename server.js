@@ -21,8 +21,9 @@ app.get("/", (req, res) => {
     let location_results;
     client.query("SELECT * FROM location")
       .then((result) => {
-        location_results = "";
-        let location_array = result.rows;
+        location_results = JSON.parse(result.rows[0]);
+
+        /*let location_array = result.rows;
         location_array.foreach(element => {
           let loc = JSON.parse(element);
           location_results += loc["lat"];
@@ -30,7 +31,7 @@ app.get("/", (req, res) => {
           location_results += "\n" + loc["id"];
           location_results += "\n" + loc["spotname"];
           location_results += "\n" + loc["spotcomment"] + "\n\n";
-        })
+        })*/
       }).catch((e) => {
         console.log(e);
         location_results = "ERROR";
