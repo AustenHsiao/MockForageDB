@@ -37,7 +37,7 @@ app.get("/", (req, res) => {
       .finally(() => {
         release();
         console.log(location_results);
-        res.render("forage", { locations: location_results })
+        res.render("forage", { locations: JSON.parse(location_results) })
       })
   })
 });
