@@ -29,9 +29,9 @@ app.get("/", (req, res) => {
           console.log(JSON.stringify(element));
           let location_data = JSON.parse(JSON.stringify(element));
           location_results += location_data["lat"];
-          location_results += "<br>" + location_data["lng"];
-          location_results += "<br>" + location_data["spotname"];
-          location_results += "<br>" + location_data["spotcomment"] + "<br><br>";
+          location_results += "#[br]" + location_data["lng"];
+          location_results += "#[br]" + location_data["spotname"];
+          location_results += "#[br]" + location_data["spotcomment"] + "#[br]#[br]";
 
           /*if (location_data.length > 1) {
             location_results += element + '\n';
