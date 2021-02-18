@@ -18,8 +18,9 @@ app.get("/", (req, res) => {
     .then(() => console.log("Connected to DB"))
     .then(() => client.query("SELECT * FROM location"))
     .then((result) => {
-      console.table(JSON.stringify(result));
-      res.render("forage", { locations: JSON.stringify(result) });
+      console.table(result);
+      console.log(JSON.parse(result))
+      res.render("forage", { JSON(result) });
     })
     .catch((e) => {
       console.log(e);
