@@ -52,9 +52,9 @@ app.get("/", (req, res) => {
       .finally(() => {
         release();
         console.log(!JSON.stringify(location_results));
-        res.render("forage", { locations: !JSON.stringify(location_results }))
+        res.render("forage", { locations: !JSON.stringify(location_results) })
+      })
   })
-})
 });
 
 app.listen(port, () => {
