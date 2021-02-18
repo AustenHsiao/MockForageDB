@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 
         //let location_array = result.rows.values();
         (result.rows).forEach(element => {
-          console.log(element, element.length);
+          console.log(typeof element);
           if (element.length > 1) {
             location_results += element + '\n';
           } else {
