@@ -22,12 +22,13 @@ app.get("/", (req, res) => {
     client.query("SELECT * FROM location")
       .then((result) => {
         location_results = "";
-        JSON(result.rows).foreach(element => {
-          location_results += element[0];
-          location_results += "\n" + element[1];
-          location_results += "\n" + element[2];
-          location_results += "\n" + element[3];
-          location_results += "\n" + element[4] + "\n\n";
+        result.rows.foreach(element => {
+          let loc = JSON.parse(element);
+          location_results += loc["lat"];
+          location_results += "\n" + loc["lng"];
+          location_results += "\n" + loc["id"];
+          location_results += "\n" + loc["spotname"];
+          location_results += "\n" + loc["spotcomment"] + "\n\n";
         })
       }).catch((e) => {
         console.log(e);
