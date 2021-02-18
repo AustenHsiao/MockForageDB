@@ -28,7 +28,6 @@ app.get("/", (req, res) => {
         //location_results = JSON.parse(JSON.stringify(result.rows));
 
         (result.rows).forEach(element => {
-          console.log(element);
           location_results.push({ "Latitude": element.lat, "Longitude": element.lng, "Name": element.spotname, "Details": element.spotcomment });
 
 
@@ -52,7 +51,7 @@ app.get("/", (req, res) => {
       })
       .finally(() => {
         release();
-
+        console.log(!JSON.stringify(location_results));
         res.render("forage", { locations: location_results })
       })
   })
