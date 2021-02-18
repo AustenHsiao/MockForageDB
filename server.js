@@ -3,9 +3,8 @@ const app = express();
 const router = express.Router();
 const path = require('path');
 const { Client } = require('pg')
-console.log(process.env.DATABASE_URL)
 const client = new Client({
-  connectionString: process.env.DATABASE_URL
+  connectionString: process.env.DATABASE_URL + "?ssl=true"
 })
 
 const port = process.env.PORT || 5000;
