@@ -14,20 +14,18 @@ app.set("view engine", "pug");
 app.use("/", express.static(path.join(__dirname, '/pics')));
 
 app.get("/", (req, res) => {
-  console.log("Trying");
   client.connect()
     .then(() => console.log("Connected to DB"))
-    .then(() => client.query("SELECT * FROM user"))
+    .then(() => client.query("SELECT * FROM location"))
     .then((result) => {
-      console.table(result);
-      res.render("forage", { locations: result });
+      console.table(JSON.stringify(result));
+      res.render("forage", { locations: JSON.stringify(result) });
     })
     .catch((e) => {
       console.log(e);
       res.render("forage", { locations: "ERROR" });
     })
     .finally(() => client.end())
-
 });
 
 app.listen(port, () => {

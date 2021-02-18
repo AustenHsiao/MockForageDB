@@ -30,8 +30,10 @@ html(lang='en')
         
         div.container.whole
             div.container.coord
+                h3#coordTitle.searchBar Search by User Name 
+                input#userNameInput
                 h3#coordTitle Foraging Locations 
-                div#coordinatesBox= locations
+                div.searchResult= locations
             
             div.container.map
                 div#mapBox(
