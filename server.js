@@ -20,11 +20,11 @@ app.get("/", (req, res) => {
     .then(() => client.query("SELECT * FROM user"))
     .then((result) => {
       console.table(result);
-      res.render("forage", { locations: "work" });
+      res.render("forage", { locations: result });
     })
     .catch((e) => {
       console.log(e);
-      res.render("forage", { locations: "no work" });
+      res.render("forage", { locations: "ERROR" });
     })
     .finally(() => client.end())
 
