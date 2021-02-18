@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
     client.query("SELECT * FROM location")
       .then((result) => {
         location_results = "";
-        result.rows.foreach(element => {
+        (result.rows).foreach(element => {
           let loc = JSON.parse(element);
           location_results += loc["lat"];
           location_results += "\n" + loc["lng"];
