@@ -21,7 +21,8 @@ app.get("/", (req, res) => {
     let location_results;
     client.query("SELECT * FROM location")
       .then((result) => {
-        location_results = JSON.parse(result.rows[0]);
+        location_results = result.rows;
+        console.log(typeof location_results);
 
         /*let location_array = result.rows;
         location_array.foreach(element => {
