@@ -3,6 +3,7 @@ const app = express();
 const router = express.Router();
 const path = require('path');
 const { Client } = require('pg')
+console.log(process.env.DATABASE_URL)
 const client = new Client({
   connectionString: process.env.DATABASE_URL
 })
@@ -19,10 +20,14 @@ app.get("/", (req, res) => {
     .then(() => client.query("SELECT * FROM user"))
     .then((result) => {
       console.table(result);
+      res.render("forage", { locations: "work" });
     })
-    .catch((e) => { console.log(e) })
+    .catch((e) => {
+      console.log(e);
+      res.render("forage", { locations: "no work" });
+    })
     .finally(() => client.end())
-  res.render("forage", { locations: "hi" });
+
 });
 
 app.listen(port, () => {
