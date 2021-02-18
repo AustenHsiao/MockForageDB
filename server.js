@@ -27,11 +27,18 @@ app.get("/", (req, res) => {
         //let location_array = result.rows.values();
         (result.rows).forEach(element => {
           console.log(JSON.stringify(element));
-          if (JSON.stringify(element).length > 1) {
+          let location_data = JSON.parse(JSON.stringify(element));
+          location_results += location_data["lat"];
+          location_results += "\n" + location_data["lng"];
+          location_results += "\n" + location_data["id"];
+          location_results += "\n" + location_data["spotname"];
+          location_results += "\n" + location_data["spotcomment"] + "\n\n";
+
+          /*if (location_data.length > 1) {
             location_results += element + '\n';
           } else {
             location_results += '\n';
-          }
+          }*/
 
           /*
           let loc = JSON.parse(element);
