@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
     .then(() => client.query("SELECT * FROM location"))
     .then((result) => {
       console.table(result.rows);
-      res.render("forage", { locations: result.rows });
+      res.render("forage", { locations: JSON.stringify(result.rows) });
     })
     .catch((e) => {
       console.log(e);
