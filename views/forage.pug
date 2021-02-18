@@ -36,10 +36,9 @@ html(lang='en')
                     h3#coordTitle Foraging Locations 
                     - var user_data= locations
                     div.searchResult
-                        ul
-                            each line in user_data
-                                each point in line 
-                                    li= point
+                        ul.resultTable
+                            each point in user_data
+                                li.resultEntry= point
             
             div.container.map
                 div#mapBox(
