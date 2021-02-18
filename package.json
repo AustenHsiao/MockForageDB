@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "designed to learn and showcase my efforts in learning DB management and it pertains to forage pdx",
   "main": "server.js",
-  "dependencies": {
-    "express": "^4.17.1",
-    "pg": "^8.5.1"
-  },
+  "dependencies": {},
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
