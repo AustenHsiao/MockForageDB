@@ -4,10 +4,7 @@ const router = express.Router();
 const path = require('path');
 const { Client } = require('pg')
 const client = new Client({
-  host: 'ec2-52-7-168-69.compute-1.amazonaws.com',
-  port: 5432,
-  user: 'fvjpwaqeisxmgw',
-  password: 'd7d3bd8c6e4391078e1cfab9677f27a6b6ba4d6c5c74b05f5c278b8b3fbff231',
+  connectionString: process.env.DATABASE_URL
 })
 
 const port = process.env.PORT || 5000;
@@ -16,15 +13,16 @@ app.set("view engine", "pug");
 app.use("/", express.static(path.join(__dirname, '/pics')));
 
 app.get("/", (req, res) => {
+  console.log("Trying");
   client.connect()
     .then(() => console.log("Connected to DB"))
     .then(() => client.query("SELECT * FROM user"))
     .then((result) => {
       console.table(result);
-      res.render("forage", { locations: "hi" });
     })
     .catch((e) => { console.log(e) })
     .finally(() => client.end())
+  res.render("forage", { locations: "hi" });
 });
 
 app.listen(port, () => {
