@@ -18,14 +18,14 @@ app.get("/", (req, res) => {
     .then(() => console.log("Connected to DB"))
     .then(() => client.query("SELECT * FROM location"))
     .then((result) => {
-      console.table(result.rows);
-      res.render("forage", { locations: JSON.stringify(result.rows) });
+      let rows = result.rows
       client.end();
+      console.table(rows);
+      res.render("forage", { locations: JSON.stringify(rows) });
     })
     .catch((e) => {
       console.log(e);
       res.render("forage", { locations: "ERROR" });
-      client.end();
     })
     .finally(() => client.end())
 });
