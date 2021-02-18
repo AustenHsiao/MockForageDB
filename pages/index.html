@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="authors" content="Austen Hsiao" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Secret Spot</title>
+  <link rel="stylesheet" href="/forage.css" />
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW1polXZ_aJhq0AMs9o27vqrNtva1pCLQ"></script>
+  <script src="index.js" defer></script>
+</head>
+
+<body>
+
+  <nav class="container navBar">
+    <h3>Secret Spot</h3>
+    <a href="/" name="nav1" id="nav1">Main</a>
+    <a href="/" name="nav2" id="nav2">Add Spot</a>
+    <a href="/" name="nav3" id="nav3">About</a>
+  </nav>
+
+  <div class="welcome" id="welcomeOverlay">
+    <div class="container welcome-text">
+      <h3 id="desc-title">Welcome to Forage App</h3>
+      <p id="desc">
+        Forage app allows users to easily set and store foraging locations.
+        Start by clicking on the 'Add Spot' tab, then filling in the details
+        on the corresponding page. Your information will be displayed on the
+        main page. Use real-time weather data to plan your foraging trip
+      </p>
+      <button id="escape" onclick="clearOverlay()">Continue</button>
+    </div>
+  </div>
+
+  <div class="container whole">
+    <div class="container coord">
+      <h3 id="coordTitle">Foraging Locations</h3>
+      <div id="coordinatesBox"></div>
+    </div>
+
+    <div class="container map">
+      <div id="mapBox" crossorigin="anonymous">map</div>
+    </div>
+  </div>
+  <div class="container weather" id="weatherBox"></div>
+</body>
+
+</html>

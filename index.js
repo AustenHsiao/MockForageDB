@@ -20,7 +20,7 @@ const client = new Client({
 */
 client.connect()
     .then(() => console.log("We're connected"))
-    .then(() => client.query("SELECT * FROM *"))
+    .then(() => client.query("SELECT * FROM user"))
     .then((result) => console.table(result.rows))
     .catch((e) => console.error(e))
     .finally(() => client.end())
