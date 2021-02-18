@@ -2,7 +2,7 @@
   "name": "mockup",
   "version": "1.0.0",
   "description": "designed to learn and showcase my efforts in learning DB management and it pertains to forage pdx",
-  "main": "index.js",
+  "main": "server.js",
   "dependencies": {
     "pg": "^8.5.1"
   },
