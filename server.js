@@ -22,13 +22,9 @@ app.get("/", (req, res) => {
     client.query("SELECT * FROM location")
       .then((result) => {
         location_results = [];
-        //console.log(result.rows.values());
-
-        //let location_array = result.rows.values();
-        //location_results = JSON.parse(JSON.stringify(result.rows));
 
         (result.rows).forEach(element => {
-          location_results.push({ "Latitude": element.lat, "Longitude": element.lng, "Name": element.spotname, "Details": element.spotcomment });
+          location_results.push([element.lat, element.lng, element.spotname, element.spotcomment]);
         })
       }).catch((e) => {
         console.log(e);
@@ -37,7 +33,7 @@ app.get("/", (req, res) => {
       .finally(() => {
         release();
         console.log(location_results);
-        res.render("forage", { locations: JSON.parse(location_results) })
+        res.render("forage", { locations: location_results })
       })
   })
 });
