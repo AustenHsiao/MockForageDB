@@ -29,10 +29,10 @@ app.get("/", (req, res) => {
 
         (result.rows).forEach(element => {
           console.log(element);
-          location_results.push(element.lat);
-          location_results.push(element.lng);
-          location_results.push(element.spotname);
-          location_results.push(element.spotcomment);
+          location_results.push([element.lat,
+          element.lng,
+          element.spotname,
+          element.spotcomment]);
 
 
           /*          if (location_data.length > 1) {
