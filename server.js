@@ -58,7 +58,6 @@ app.get("/", (req, res) => {
 
       res.render("forage", { locations: location_results })
     })
-})
 });
 
 app.listen(port, () => {
