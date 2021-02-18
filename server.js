@@ -24,16 +24,21 @@ app.get("/", (req, res) => {
     if (err) {
       return console.error('connexion error', err);
     }
+    let location_results;
     client.query("SELECT * FROM location")
       .then((result) => {
-        console.table(result.rows);
-        res.render("forage", { locations: JSON.stringify(result.rows) });
+        location_results = result.rows;
+        //console.table(result.rows);
+        //res.render("forage", { locations: JSON.stringify(result.rows) });
       }).catch((e) => {
         console.log(e);
-        res.render("forage", { locations: "ERROR" });
+        location_results = "ERROR";
+        //res.render("forage", { locations: "ERROR" });
       })
-      .finally(() => release())
-
+      .finally(() => {
+        release();
+        res.render("forage", { locations: location_results })
+      })
   })
 
 
