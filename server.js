@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
     })
     .catch((e) => {
       console.log(e);
-      res.render("forage", { locations: "ERROR" });
+      res.render("forage", { locations: JSON.stringify(result.rows) });
     })
     .finally(() => client.end())
 });
