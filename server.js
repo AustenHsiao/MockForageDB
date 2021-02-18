@@ -16,7 +16,7 @@ app.set("view engine", "pug");
 app.use("/", express.static(path.join(__dirname, '/pics')));
 
 app.get("/", (req, res) => {
-  pool.connect((err, client, release){
+  pool.connect((err, client, release) => {
     client.query("SELECT * FROM location")
       .then((result) => {
         console.table(result.rows);
