@@ -21,28 +21,33 @@ app.get("/", (req, res) => {
     let location_results;
     client.query("SELECT * FROM location")
       .then((result) => {
-        //location_results = "";
+        location_results = [];
         //console.log(result.rows.values());
 
         //let location_array = result.rows.values();
-        location_results = JSON.parse(JSON.stringify(result.rows));
+        //location_results = JSON.parse(JSON.stringify(result.rows));
 
-        /*(result.rows).forEach(element => {
-          location_results += element;
+        (result.rows).forEach(element => {
+          console.log(element);
+          location_results.push(element.lat);
+          location_results.push(element.lng);
+          location_results.push(element.spotname);
+          location_results.push(element.spotcomment);
 
-          if (location_data.length > 1) {
-            location_results += element + '\n';
-          } else {
-            location_results += '\n';
-          }
 
-          let loc = JSON.parse(element);
-          location_results += loc["lat"];
-          location_results += "\n" + loc["lng"];
-          location_results += "\n" + loc["id"];
-          location_results += "\n" + loc["spotname"];
-          location_results += "\n" + loc["spotcomment"] + "\n\n";
-        })*/
+          /*          if (location_data.length > 1) {
+                      location_results += element + '\n';
+                    } else {
+                      location_results += '\n';
+                    }
+          
+                    let loc = JSON.parse(element);
+                    location_results += loc["lat"];
+                    location_results += "\n" + loc["lng"];
+                    location_results += "\n" + loc["id"];
+                    location_results += "\n" + loc["spotname"];
+                    location_results += "\n" + loc["spotcomment"] + "\n\n";*/
+        })
       }).catch((e) => {
         console.log(e);
         location_results = "ERROR";
