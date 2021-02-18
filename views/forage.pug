@@ -34,7 +34,12 @@ html(lang='en')
                 input#userNameInput
                 div.searchSplit
                     h3#coordTitle Foraging Locations 
-                    div.searchResult= locations
+                    - var user_data= locations
+                    div.searchResult
+                        ul
+                            each line in user_data
+                                each point in line 
+                                    li= point
             
             div.container.map
                 div#mapBox(

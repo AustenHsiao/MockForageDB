@@ -29,21 +29,6 @@ app.get("/", (req, res) => {
 
         (result.rows).forEach(element => {
           location_results.push({ "Latitude": element.lat, "Longitude": element.lng, "Name": element.spotname, "Details": element.spotcomment });
-
-
-
-          /*          if (location_data.length > 1) {
-                      location_results += element + '\n';
-                    } else {
-                      location_results += '\n';
-                    }
-          
-                    let loc = JSON.parse(element);
-                    location_results += loc["lat"];
-                    location_results += "\n" + loc["lng"];
-                    location_results += "\n" + loc["id"];
-                    location_results += "\n" + loc["spotname"];
-                    location_results += "\n" + loc["spotcomment"] + "\n\n";*/
         })
       }).catch((e) => {
         console.log(e);
