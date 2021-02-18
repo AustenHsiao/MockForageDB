@@ -21,7 +21,14 @@ app.get("/", (req, res) => {
     let location_results;
     client.query("SELECT * FROM location")
       .then((result) => {
-        location_results = JSON.stringify(result.rows);
+        location_results = "";
+        JSON(result.rows).foreach(element => {
+          location_results += element[0];
+          location_results += "\n" + element[1];
+          location_results += "\n" + element[2];
+          location_results += "\n" + element[3];
+          location_results += "\n" + element[4] + "\n\n";
+        })
       }).catch((e) => {
         console.log(e);
         location_results = "ERROR";
