@@ -6,6 +6,8 @@ function user_search() {
         //loc.rows[0].innerText.trim() -- row 0 contains the userid. Trim whitespace
         if (String(search_parameter) === loc.rows[0].innerText.trim()) {
             loc.style.display = "block";
+        } else {
+            loc.style.display = "hidden";
         }
     };
 }
