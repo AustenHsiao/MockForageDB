@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
       })
       .finally(() => {
         release();
-        res.render("forage", { locations: location_results, user_id: userid })
+        res.render("forage", { locations: location_results, id_info: userid })
       })
   })
 });
