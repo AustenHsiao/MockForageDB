@@ -42,9 +42,12 @@ html(lang='en')
                     - var user_id= id_info
                     div.searchResult
                         for line, index in user_data 
-                            table.userid #{user_id[index]}
+                            table.location_data 
+                                tr 
+                                    td.userid #{user_id[index]}
                                 for point in line
-                                    tr.resultEntry #{point}
+                                    tr
+                                        td.resultEntry #{point}
                                     br
                             br
             
