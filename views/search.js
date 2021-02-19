@@ -7,7 +7,7 @@ function user_search() {
         if (String(search_parameter) === loc.rows[0].innerText.trim()) {
             loc.style.display = "block";
         } else {
-            loc.style.display = "hidden";
+            loc.style.display = "none";
         }
     };
 }
