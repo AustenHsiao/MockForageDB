@@ -149,3 +149,7 @@ img{
 .location_data{
   display: none;
 }
+
+#user_identifier{
+  display: none;
+}

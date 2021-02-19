@@ -44,7 +44,7 @@ html(lang='en')
                         for line, index in user_data 
                             table.location_data 
                                 tr 
-                                    td.userid #{user_id[index]}
+                                    td.userid#user_identifier #{user_id[index]}
                                 for point in line
                                     tr
                                         td.resultEntry #{point}
