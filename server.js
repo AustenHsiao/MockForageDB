@@ -12,6 +12,7 @@ const port = process.env.PORT || 5000;
 
 app.set("view engine", "pug");
 app.use("/", express.static(path.join(__dirname, '/pics')));
+app.use("/", express.static(path.join(__dirname, '/views')));
 
 app.get("/", (req, res) => {
   pool.connect((err, client, release) => {
