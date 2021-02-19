@@ -18,21 +18,17 @@ app.get("/", (req, res) => {
     if (err) {
       return console.error('connexion error', err);
     }
-    let location_results;
+    let location_results = [];
     client.query("SELECT * FROM location")
       .then((result) => {
-        location_results = [];
-
         (result.rows).forEach(element => {
-          location_results.push([`Latitude: ${element.lat}`, `Longitude: ${element.lng}`, `Name: ${element.spotname}`, `Comment: ${element.spotcomment}`]);
+          location_results.push([`Latitude: ${element.lat}`, `Longitude: ${element.lng}`, `Name: ${element.spotname}`, `Comment: ${element.spotcomment}`, `${element.id}`]);
         })
       }).catch((e) => {
-        console.log(e);
-        location_results = "ERROR";
+        location_results = [["ERROR"]];
       })
       .finally(() => {
         release();
-        console.log(location_results);
         res.render("forage", { locations: location_results })
       })
   })

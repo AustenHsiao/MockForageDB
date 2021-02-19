@@ -36,11 +36,11 @@ html(lang='en')
                     h3#coordTitle Foraging Locations 
                     - var user_data= locations
                     div.searchResult
-                        ul.resultTable
-                            each line in user_data
-                                each point in line 
-                                    li.resultEntry= point
-                                br
+                        each line in user_data
+                            tr#userid= line[-1]
+                            each point in line[0:-1] 
+                                td.resultEntry= point
+                            br
             
             div.container.map
                 div#mapBox(
@@ -50,4 +50,5 @@ html(lang='en')
                         src='psu.png'
                         alt='Google maps mock image'
                     )
-        div.container.weather#weatherBox
+        div.container.weather#weatherBox 
+        // script(src="/search.js")
