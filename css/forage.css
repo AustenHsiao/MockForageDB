@@ -97,7 +97,7 @@ img{
   font-size: 1vw;
 }
 
-#coordTitle {
+.coordTitle {
   font-size: 1.5vw;
   font-weight: bold;
 }
@@ -113,13 +113,12 @@ img{
   color: white;
 }
 
-.searchBar{
+#searchBar{
   margin: 0;
   padding: 0;
 }
 
 .searchResult{
-  /*display: none;*/
   padding: 0;
   margin: 0;
   font-size: 1vw;
@@ -147,6 +146,6 @@ img{
   margin: 0;
 }
 
-#userid{
-  
+.userid{
+  display: none;
 }

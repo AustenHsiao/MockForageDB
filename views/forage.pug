@@ -30,15 +30,19 @@ html(lang='en')
         
         div.container.whole
             div.container.coord
-                h3#coordTitle.searchBar Search by User Name 
-                input#userNameInput
+                h3.coordTitle#searchBar Search by User Name 
+                input#userNameInput(
+                    type= 'text'
+                    onkeyup= 'user_search()'
+                    placeholder= 'enter name to search'
+                )
                 div.searchSplit
-                    h3#coordTitle Foraging Locations 
+                    h3.coordTitle Foraging Locations 
                     - var user_data= locations
                     - var user_id= id_info
                     div.searchResult
                         for line, index in user_data 
-                            table#userid= user_id[index]
+                            table.userid= user_id[index]
                             for point in line
                                 tr.resultEntry= point
                                 br
@@ -53,4 +57,4 @@ html(lang='en')
                         alt='Google maps mock image'
                     )
         div.container.weather#weatherBox 
-        // script(src="/search.js")
+        script(src="/search.js")
